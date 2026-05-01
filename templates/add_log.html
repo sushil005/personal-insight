@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Add Log{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg p-4 mx-auto border-0" style="max-width: 520px;">
+        <h2 class="text-center mb-4">Add Daily Log</h2>
+
+        <form method="POST">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Study Hours</label>
+                <input type="number" min="0" max="24" step="0.1" name="study" class="form-control" placeholder="e.g. 3.5" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Screen Time (hours)</label>
+                <input type="number" min="0" max="24" step="0.1" name="screen" class="form-control" placeholder="e.g. 6.0" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Sleep Hours</label>
+                <input type="number" min="0" max="24" step="0.1" name="sleep" class="form-control" placeholder="e.g. 7.5" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Mood</label>
+                <select name="mood" class="form-select" required>
+                    {% for mood in moods %}
+                        <option value="{{ mood }}">{{ mood }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2">Add Log</button>
+        </form>
+
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary mt-3 w-100">
+            Back to Dashboard
+        </a>
+    </div>
+</div>
+{% endblock %}
