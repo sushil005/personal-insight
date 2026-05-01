@@ -17,9 +17,3 @@ A full-stack Flask web app to track daily productivity, screen time, sleep, and 
 
 ## 📊 Use Case
 Helps users analyze productivity patterns and improve daily habits.
-
-## 🔗 Live Demo
-(coming soon)
-
-## 📸 Screenshots
-(Add your dashboard screenshot here)
